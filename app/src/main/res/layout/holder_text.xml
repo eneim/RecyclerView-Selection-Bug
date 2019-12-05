@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/holderRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="@color/colorPrimaryDark"
+    android:clickable="true"
+    android:focusable="true"
+    android:minHeight="200dp"
+    >
+
+  <androidx.appcompat.widget.AppCompatTextView
+      android:id="@+id/message"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:text="IDLE"
+      android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+      android:textColor="@android:color/white"
+      />
+</FrameLayout>
