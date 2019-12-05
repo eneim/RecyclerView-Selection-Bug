@@ -11,3 +11,11 @@
 /build
 /captures
 .externalNativeBuild
+/app/.gitignore
+/.idea/encodings.xml
+/app/src/androidTest/java/bug/rv/selection/ExampleInstrumentedTest.kt
+/app/src/test/java/bug/rv/selection/ExampleUnitTest.kt
+/.idea/gradle.xml
+/.idea/misc.xml
+/app/proguard-rules.pro
+/.idea/runConfigurations.xml
