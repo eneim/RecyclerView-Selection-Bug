@@ -15,26 +15,26 @@ class MainActivity : AppCompatActivity() {
 
   companion object {
     val data = arrayListOf(
-        "Cat 0",
-        "Cat 1",
-        "Cat 2",
-        "Cat 3",
-        "Cat 4",
-        "Cat 5",
-        "Cat 6",
-        "Cat 7",
-        "Cat 8",
-        "Cat 9",
-        "Cat 10",
-        "Cat 11",
-        "Cat 12",
-        "Cat 13",
-        "Cat 14",
-        "Cat 15",
-        "Cat 16",
-        "Cat 17",
-        "Cat 18",
-        "Cat 19"
+      "Cat 0",
+      "Cat 1",
+      "Cat 2",
+      "Cat 3",
+      "Cat 4",
+      "Cat 5",
+      "Cat 6",
+      "Cat 7",
+      "Cat 8",
+      "Cat 9",
+      "Cat 10",
+      "Cat 11",
+      "Cat 12",
+      "Cat 13",
+      "Cat 14",
+      "Cat 15",
+      "Cat 16",
+      "Cat 17",
+      "Cat 18",
+      "Cat 19"
     )
   }
 
@@ -49,14 +49,14 @@ class MainActivity : AppCompatActivity() {
     recyclerView.adapter = adapter
 
     selectionTracker = SelectionTracker.Builder<Long>(
-        "My-Cool-App",
-        recyclerView,
-        StableIdKeyProvider(recyclerView),
-        MyItemLookup(recyclerView),
-        StorageStrategy.createLongStorage()
+      "My-Cool-App",
+      recyclerView,
+      StableIdKeyProvider(recyclerView),
+      MyItemLookup(recyclerView),
+      StorageStrategy.createLongStorage()
     )
-        .withSelectionPredicate(SelectionPredicates.createSelectSingleAnything())
-        .build()
+      .withSelectionPredicate(SelectionPredicates.createSelectSingleAnything())
+      .build()
     selectionTracker.onRestoreInstanceState(savedInstanceState)
 
     selectionTracker.addObserver(object : SelectionObserver<Long>() {
@@ -66,11 +66,6 @@ class MainActivity : AppCompatActivity() {
       ) {
         super.onItemStateChanged(key, selected)
         Log.d("Bugger:Selection", "State: $key ~ $selected")
-      }
-
-      override fun onSelectionChanged() {
-        super.onSelectionChanged()
-        Log.d("Bugger:Selection", "onSelectionChanged()")
       }
     })
 
@@ -92,6 +87,8 @@ class MainActivity : AppCompatActivity() {
     // 5. result: both first item and second item appear to be selected.
     // Expect: only one/latest item appears to be selected.
     // Actual: both first item and second item appear to be selected.
+
+    // TODO un-comment below to stop the auto actions.
     recyclerView.postDelayed(2000) {
       val itemOnTop = recyclerView.findViewHolderForAdapterPosition(0)
       if (itemOnTop != null) {

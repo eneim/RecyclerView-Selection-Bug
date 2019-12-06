@@ -31,6 +31,7 @@ class MyAdapter(private val items: ArrayList<String>) : Adapter<MyViewHolder>() 
     position: Int
   ) {
     val selected = tracker?.isSelected(getItemId(position)) == true
+    holder.itemView.isActivated = selected
     holder.messageView.text = "${items[position]}, selected: $selected"
     if (selected) {
       holder.itemView.setBackgroundResource(R.color.colorAccent)
@@ -50,12 +51,12 @@ class MyAdapter(private val items: ArrayList<String>) : Adapter<MyViewHolder>() 
 
   override fun onViewAttachedToWindow(holder: MyViewHolder) {
     super.onViewAttachedToWindow(holder)
-    Log.i("Bugger:Adapter", "attach: $holder")
+    Log.i("Bugger:Adapter", "attach: $holder, ${holder.itemView.isActivated}")
   }
 
   override fun onViewDetachedFromWindow(holder: MyViewHolder) {
     super.onViewDetachedFromWindow(holder)
-    Log.d("Bugger:Adapter", "detach: $holder")
+    Log.d("Bugger:Adapter", "detach: $holder, ${holder.itemView.isActivated}")
   }
 
   override fun onViewRecycled(holder: MyViewHolder) {
